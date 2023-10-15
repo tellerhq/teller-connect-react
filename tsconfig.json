@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "removeComments": false,
+    "strict": true,
+    "target": "esnext" 
+  },
+  "exclude": ["node_modules"],
+  "include": ["src/**/*"]
+}
