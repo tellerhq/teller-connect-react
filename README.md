@@ -44,7 +44,7 @@ import { useTellerConnect } from 'teller-connect-react';
 const { open, ready } = useTellerConnect({
   appId: "YOUR_APPLICATION_ID",
   onSuccess: (authorization) => {
-    // Save yout access token here
+    // Save your access token here
   },
 });
 
@@ -59,7 +59,7 @@ return (
 
 ℹ️ See [src/types/index.ts][types] for exported types.
 
-The [Teller Connect Guide] remains the canonical reference of Teller Connect's capabilities and supported configurations.
+The [Teller Connect Guide](http://teller.io/docs/guides/connect) remains the canonical reference of Teller Connect's capabilities and supported configurations.
 
 ### Presenting Teller Connect without user interaction
 
