@@ -62,12 +62,6 @@ export interface TellerConnectOptions {
   [key: string]: any;
 }
 
-export type TellerConnectPropTypes = TellerConnectOptions & {
-  children: React.ReactNode;
-  className?: string;
-  style?: React.CSSProperties;
-};
-
 export interface TellerConnectInstance {
   open: () => void;
   destroy: () => void;
