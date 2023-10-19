@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import useScript from 'react-script-hook';
 
-import { createTeller, TellerConnectManager } from './manager';
-import { TellerConnectOptions } from './types';
+import { createTeller } from './manager';
+import { TellerConnectInstance, TellerConnectOptions } from './types';
 
 const TC_JS = 'https://cdn.teller.io/connect/connect.js';
 
@@ -12,7 +12,7 @@ export const useTellerConnect = (options: TellerConnectOptions) => {
     checkForExisting: true,
   });
 
-  const [teller, setTeller] = useState<TellerConnectManager | null>(null);
+  const [teller, setTeller] = useState<TellerConnectInstance | null>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {

@@ -1,12 +1,9 @@
-import React from 'react';
-import { TellerConnectManager } from '../manager';
+export interface TellerUser {
+  id: string;
+}
 
 export interface TellerInstitution {
   name: string;
-}
-
-export interface TellerUser {
-  id: string;
 }
 
 export interface TellerEnrollment {
@@ -18,48 +15,46 @@ export interface TellerConnectEnrollment {
   accessToken: string;
   user: TellerUser;
   enrollment: TellerEnrollment;
-  signatures: Array<string> | null;
-} 
-
-export interface TellerConnectOnEventMetadata {
+  signatures?: string[];
 }
 
-export type TellerConnectOnFailure = (failure: {
-  type: "payment" | "payee" | string;
-  code: "timeout" | "error" | string;
+export interface TellerConnectFailure {
+  type: "payee" | "payment";
+  code: "timeout" | "error";
   message: string;
-}) => void;
+}
+
+export type TellerConnectOnSuccess = (enrollment: TellerConnectEnrollment) => void;
 
 export type TellerConnectOnLoad = () => void;
 
 export type TellerConnectOnExit = () => void;
 
-export type TellerConnectOnSuccess = (
-  authorization: TellerConnectEnrollment
-) => void;
+export type TellerConnectOnFailure = (failure: TellerConnectFailure) => void;
 
-export type TellerConnectOnEvent = (
-  name: string,
-  data: object, 
-) => void;
+export type TellerConnectOnEvent = (name: string, data: object) => void;
 
 export interface TellerConnectOptions {
-  onSuccess: TellerConnectOnSuccess;
-  onLoad: null | TellerConnectOnLoad;
-  onFailure: null | TellerConnectOnFailure;
-  onEvent: null | TellerConnectOnEvent;
-  onExit: null | TellerConnectOnExit;
-  environment: "production" | "development" | "sandbox";
+  // Required options
   applicationId: string;
-  enrollmentId: null | string;
-  institution: null | string;
-  selectAccount: "disabled" | "single" | "multiple";
-  connectToken: null | string;
-  nonce: null | string;
-  appearance: null | "dark" | "light" | "system";
-  products: Array<"identity" | "verify" | "transactions">;
-  accountFilter: null | object;
-  [key: string]: any;
+  onSuccess: TellerConnectOnSuccess;
+
+  // Additional options
+  environment?: "sandbox" | "development" | "production";
+  institution?: string;
+  selectAccount?: "disabled" | "single" | "multiple";
+  enrollmentId?: string;
+  connectToken?: string;
+  nonce?: string;
+  onInit?: TellerConnectOnLoad;
+  onExit?: TellerConnectOnExit;
+  onFailure?: TellerConnectOnFailure;
+
+  // Undocumented options
+  appearance?: "dark" | "light" | "system";
+  products?: ("identity" | "verify" | "transactions")[];
+  accountFilter?: object;
+  onEvent?: TellerConnectOnEvent;
 }
 
 export interface TellerConnectInstance {
@@ -67,7 +62,7 @@ export interface TellerConnectInstance {
   destroy: () => void;
 }
 
-export interface TellerConnect extends TellerConnectManager {
+export interface TellerConnect extends TellerConnectInstance {
   setup: (config: TellerConnectOptions) => TellerConnectInstance;
 }
 
