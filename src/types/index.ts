@@ -26,7 +26,7 @@ export interface TellerConnectFailure {
 
 export type TellerConnectOnSuccess = (enrollment: TellerConnectEnrollment) => void;
 
-export type TellerConnectOnLoad = () => void;
+export type TellerConnectOnInit = () => void;
 
 export type TellerConnectOnExit = () => void;
 
@@ -46,7 +46,7 @@ export interface TellerConnectOptions {
   enrollmentId?: string;
   connectToken?: string;
   nonce?: string;
-  onInit?: TellerConnectOnLoad;
+  onInit?: TellerConnectOnInit;
   onExit?: TellerConnectOnExit;
   onFailure?: TellerConnectOnFailure;
 
