@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "",
   "main": "dist/teller-connect-react.cjs.js",
+  "types": "dist/@types/index.d.ts",
   "scripts": {
     "build": "webpack --mode production",
+    "postbuild": "tsc -p tsconfig.types.json",
     "test": "NODE_ENV=test BABEL_ENV=testing jest"
   },
   "keywords": [],
