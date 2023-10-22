@@ -52,7 +52,7 @@ export interface TellerConnectOptions {
 
   // Undocumented options
   appearance?: "dark" | "light" | "system";
-  products?: ("identity" | "verify" | "transactions")[];
+  products?: ("balance" | "identity" | "transactions" | "verify")[];
   accountFilter?: object;
   onEvent?: TellerConnectOnEvent;
 }
