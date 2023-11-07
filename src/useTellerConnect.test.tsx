@@ -41,8 +41,8 @@ describe('useTellerConnect', () => {
   beforeEach(() => {
     mockedUseScript.mockImplementation(() => ScriptLoadingState.LOADED);
     window.TellerConnect = {
-      setup: ({ onLoad }) => {
-        onLoad && onLoad();
+      setup: ({ onInit }) => {
+        onInit && onInit();
         return {
           create: jest.fn(),
           open: jest.fn(),
@@ -74,7 +74,9 @@ describe('useTellerConnect', () => {
   });
 
   it('should not be ready if applicationId is missing', async () => {
-    render(<HookComponent config={{ ...config, applicationId: null }} />);
+    // NOTE: Casting to any is necessary here because the TellerConnectOptions interface marks
+    //       applicationId as required
+    render(<HookComponent config={{ ...config, applicationId: undefined as any }} />);
     expect(screen.getByText(ReadyState.NOT_READY));
     expect(screen.getByText(ReadyState.NO_ERROR));
   });

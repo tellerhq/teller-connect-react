@@ -1,15 +1,16 @@
 import React from 'react';
 
-import { TellerConnectPropTypes } from './types';
+import { TellerConnectOptions } from './types';
 import { useTellerConnect } from './useTellerConnect';
 
-export const TellerConnect: React.FC<TellerConnectPropTypes> = props => {
-  const { children, style, className, ...config } = props;
-  const { error, open } = useTellerConnect({ ...config });
+type PropTypes = TellerConnectOptions & React.HTMLProps<HTMLButtonElement>
+
+export const TellerConnect: React.FC<PropTypes> = ({ children, className, style, ...opts }) => {
+  const { error, open } = useTellerConnect({ ...opts });
 
   return (
     <button
-      disabled={Boolean(error)}
+      disabled={!!error}
       type="button"
       className={className}
       style={{

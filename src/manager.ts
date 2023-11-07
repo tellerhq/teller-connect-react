@@ -3,11 +3,6 @@ import {
   TellerConnectInstance,
 } from './types';
 
-export interface TellerConnectManager {
-  open: (() => void) | Function;
-  destroy: (() => void) | Function;
-}
-
 interface ManagerState {
   teller: TellerConnectInstance | null;
   open: boolean;
