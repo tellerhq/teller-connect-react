@@ -42,7 +42,7 @@ import { useTellerConnect } from 'teller-connect-react';
 // ...
 
 const { open, ready } = useTellerConnect({
-  appId: "YOUR_APPLICATION_ID",
+  applicationId: "YOUR_APPLICATION_ID",
   onSuccess: (authorization) => {
     // Save your access token here
   },
