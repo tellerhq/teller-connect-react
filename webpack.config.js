@@ -11,13 +11,13 @@ module.exports = [
       'react': {
         commonjs: 'react',
         commonjs2: 'react',
-        amd: 'React',
+        amd: 'react',
         root: 'React'
       },
       'react-dom': {
         commonjs: 'react-dom',
         commonjs2: 'react-dom',
-        amd: 'ReactDOM',
+        amd: 'react-dom',
         root: 'ReactDOM'
       }
     },
@@ -46,13 +46,13 @@ module.exports = [
       'react': {
         commonjs: 'react',
         commonjs2: 'react',
-        amd: 'React',
+        amd: 'react',
         root: 'React'
       },
       'react-dom': {
         commonjs: 'react-dom',
         commonjs2: 'react-dom',
-        amd: 'ReactDOM',
+        amd: 'react-dom',
         root: 'ReactDOM'
       }
     },
@@ -82,13 +82,13 @@ module.exports = [
       'react': {
         commonjs: 'react',
         commonjs2: 'react',
-        amd: 'React',
+        amd: 'react',
         root: 'React'
       },
       'react-dom': {
         commonjs: 'react-dom',
         commonjs2: 'react-dom',
-        amd: 'ReactDOM',
+        amd: 'react-dom',
         root: 'ReactDOM'
       }
     },
