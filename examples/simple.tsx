@@ -3,13 +3,13 @@ import React, { useCallback, useState } from 'react';
 import { useTellerConnect, TellerConnectOnSuccess } from 'teller-connect-react';
 
 const SimpleTellerConnect = () => {
-  const appId = 'your_app_id';
+  const applicationId = 'your_app_id';
   const onSuccess = useCallback<TellerConnectOnSuccess>((authorization) => {
     console.log(authorization);
   }, []);
 
   const { open, ready } = useTellerConnect({
-    appId,
+    applicationId,
     onSuccess,
   });
 
