@@ -9,7 +9,7 @@ import {
 } from 'teller-connect-react';
 
 const TellerConnect = () => {
-  const appId = 'your_app_id';
+  const applicationId = 'your_app_id';
   const onSuccess = useCallback<TellerConnectOnSuccess>((authorization) => {
     // send public_token to your server
     // https://teller.io/docs/api/tokens/#token-exchange-flow
@@ -23,7 +23,7 @@ const TellerConnect = () => {
   }, []);
 
   const config: TellerConnectOptions = {
-    appId,
+    applicationId,
     onSuccess,
     onEvent,
     onExit,
