@@ -10,11 +10,11 @@ import {
 interface Props {}
 
 class TellerConnectClass extends React.Component<Props> {
-  appId: string;
+  applicationId: string;
 
   constructor(props: Props) {
     super(props);
-    this.appId = 'your_app_id';
+    this.applicationId = 'your_app_id';
   }
 
   onSuccess: TellerConnectOnSuccess = (authorization) => {
@@ -34,7 +34,7 @@ class TellerConnectClass extends React.Component<Props> {
       <TellerConnect
         className="CustomButton"
         style={{ padding: '20px', fontSize: '16px', cursor: 'pointer' }}
-        applicationId={this.appId}
+        applicationId={this.applicationId}
         onSuccess={this.onSuccess}
         onEvent={this.onEvent}
         onExit={this.onExit}
