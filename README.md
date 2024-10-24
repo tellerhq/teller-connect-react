@@ -42,7 +42,7 @@ import { useTellerConnect } from 'teller-connect-react';
 // ...
 
 const { open, ready } = useTellerConnect({
-  appId: "YOUR_APPLICATION_ID",
+  applicationId: "YOUR_APPLICATION_ID",
   onSuccess: (authorization) => {
     // Save your access token here
   },
@@ -100,7 +100,7 @@ const App extends React.Component {
       <TellerConnect
         className="CustomButton"
         style={{ padding: '20px', fontSize: '16px', cursor: 'pointer' }}
-        applicationId={this.state.appId}
+        applicationId={this.state.applicationId}
         onSuccess={this.onSuccess}
         onEvent={this.onEvent}
         onExit={this.onExit}
