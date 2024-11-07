@@ -3,6 +3,7 @@ export interface TellerUser {
 }
 
 export interface TellerInstitution {
+  id: string;
   name: string;
 }
 
