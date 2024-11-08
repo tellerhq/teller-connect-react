@@ -1,6 +1,6 @@
 {
   "name": "teller-connect-react",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "React bindings for Teller Connect",
   "main": "dist/teller-connect-react.cjs.js",
   "types": "dist/@types/index.d.ts",
@@ -9,7 +9,12 @@
     "postbuild": "tsc -p tsconfig.types.json",
     "test": "NODE_ENV=test BABEL_ENV=testing jest"
   },
-  "keywords": ["connect", "react", "teller", "typescript"],
+  "keywords": [
+    "connect",
+    "react",
+    "teller",
+    "typescript"
+  ],
   "author": "Teller",
   "license": "ISC",
   "devDependencies": {
