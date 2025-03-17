@@ -15,6 +15,9 @@ export const useTellerConnect = (options: TellerConnectOptions) => {
   const [teller, setTeller] = useState<TellerConnectInstance | null>(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
+  // Array's ref could change, so we want to enforce value-comparison:
+  const productsString = (options.products || []).slice().sort().join(',');
+
   useEffect(() => {
     if (loading) {
       return;
@@ -53,8 +56,7 @@ export const useTellerConnect = (options: TellerConnectOptions) => {
     options.applicationId,
     options.enrollmentId,
     options.connectToken,
-    // Array's ref could change, so we want to enforce value-comparison:
-    (options.products || []).slice().sort().join(',')
+    productsString
   ]);
 
   const ready = teller != null && (!loading || iframeLoaded);
