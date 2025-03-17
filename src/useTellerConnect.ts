@@ -53,7 +53,8 @@ export const useTellerConnect = (options: TellerConnectOptions) => {
     options.applicationId,
     options.enrollmentId,
     options.connectToken,
-    options.products,
+    // Array's ref could change, so we want to enforce value-comparison:
+    options.products ? JSON.stringify(options.products) : undefined,
   ]);
 
   const ready = teller != null && (!loading || iframeLoaded);
