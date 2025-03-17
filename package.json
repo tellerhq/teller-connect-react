@@ -1,6 +1,6 @@
 {
   "name": "teller-connect-react",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React bindings for Teller Connect",
   "main": "dist/teller-connect-react.cjs.js",
   "types": "dist/@types/index.d.ts",
